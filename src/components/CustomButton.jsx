@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: 'blue',
         borderRadius: 5,
-        //padding: 10,
+        padding: 10,
         width: '100%',
-        height: '20%'
+        height: '6%'
     },
     txt_btn: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
         textAlign: 'center',
     }

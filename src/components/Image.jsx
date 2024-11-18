@@ -3,7 +3,7 @@ import React from 'react'
 import images from '../constant/images'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Icon, { Icons } from './Icons'
-import color from '../constant/color'
+import color from '../constant/colors'
 import { GoogleIcon, IconSvg } from './svg'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 
