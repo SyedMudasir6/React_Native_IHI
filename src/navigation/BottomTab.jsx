@@ -1,40 +1,46 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { StyleSheet } from 'react-native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Bottom/Home';
 import Shop from '../screens/Bottom/Shop';
 import Wishlist from '../screens/Bottom/Wishlist';
 import Account from '../screens/Bottom/Account';
+import { SCREENS } from '../constant/screen';
+import Icon from 'react-native-vector-icons/Ionicons'; // Import icons
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
+
 export default function BottomTab() {
     return (
         <Tab.Navigator
-            screenOptions={{
-                transitionSpec: {
-                    animation: 'timing',
-                    config: {
-                        duration: 150,
-                        easing: Easing.inOut(Easing.ease),
-                    },
+        
+            screenOptions={({ route }) => ({
+                headerShown: false,
+                tabBarIcon: ({ color, size }) => {
+                    let iconName;
+
+                    if (route.name === SCREENS.BOTTOM_SCREEN.Home) {
+                        iconName = 'home-outline';
+                    } else if (route.name === SCREENS.BOTTOM_SCREEN.Shop) {
+                        iconName = 'cart-outline';
+                    } else if (route.name === SCREENS.BOTTOM_SCREEN.Wishlist) {
+                        iconName = 'heart-outline';
+                    } else if (route.name === SCREENS.BOTTOM_SCREEN.Account) {
+                        iconName = 'person-outline';
+                    }
+                    return <Icon name={iconName} size={size} color={color} />;
                 },
-                sceneStyleInterpolator: ({ current }) => ({
-                    sceneStyle: {
-                        opacity: current.progress.interpolate({
-                            inputRange: [-1, 0, 1],
-                            outputRange: [0, 1, 0],
-                        }),
-                    },
-                }),
-            }}
+                tabBarShowLabel: false, 
+                tabBarActiveTintColor: '#007bff',
+                tabBarInactiveTintColor: 'gray', 
+            })}
         >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Shop" component={Shop} />
-            <Tab.Screen name="WishList" component={Wishlist} />
-            <Tab.Screen name="Account" component={Account} />
+            <Tab.Screen name={SCREENS.BOTTOM_SCREEN.Home} component={Home} />
+            <Tab.Screen name={SCREENS.BOTTOM_SCREEN.Shop} component={Shop} />
+            <Tab.Screen name={SCREENS.BOTTOM_SCREEN.Wishlist} component={Wishlist} />
+            <Tab.Screen name={SCREENS.BOTTOM_SCREEN.Account} component={Account} />
         </Tab.Navigator>
     );
-
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
