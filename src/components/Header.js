@@ -2,6 +2,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Entypo from 'react-native-vector-icons/Entypo';
+import colors from '../constant/colors';
 
 export default function Header({menu, onPress, title}) {
   return (
@@ -15,12 +16,7 @@ export default function Header({menu, onPress, title}) {
             <Entypo name="menu" size={40} color="black" />
           </TouchableOpacity>
         )}
-        <TouchableOpacity
-          onPress={onPress}
-          activeOpacity={onPress ? 0.8 : 1}
-          style={styles.row}>
-          <Text style={styles.title}>{title}</Text>
-        </TouchableOpacity>
+        <Text style={styles.title}>{title}</Text>
       </View>
     </View>
   );
@@ -29,10 +25,10 @@ export default function Header({menu, onPress, title}) {
 const styles = StyleSheet.create({
   container: {
     height: '8%',
-    backgroundColor: 'skyblue',
+    backgroundColor: colors.PRIMARY,
     flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: '3%',
+    // alignItems: 'center',
+    // paddingHorizontal: '3%',
     justifyContent: 'space-between',
   },
   row: {
@@ -44,5 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'black',
     textAlign: 'center',
+    marginLeft: 130,
   },
 });

@@ -5,10 +5,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import BottomNavigation from './BottomTab';
 import { SCREENS } from '../constant/screen';
 import Home from '../screens/Bottom/Home';
+import DrawerScreen from './DrawerScreen';
 
 const Drawer = createDrawerNavigator();
 
-export default function DrawerNavigator() {
+export default function DrawerNavigator(props) {
   return (
     <Drawer.Navigator
       screenOptions={{

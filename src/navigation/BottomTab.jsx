@@ -6,7 +6,7 @@ import Shop from '../screens/Bottom/Shop';
 import Wishlist from '../screens/Bottom/Wishlist';
 import Account from '../screens/Bottom/Account';
 import { SCREENS } from '../constant/screen';
-import Icon from 'react-native-vector-icons/Ionicons'; // Import icons
+import Icon from 'react-native-vector-icons/Ionicons';
 import colors from '../constant/colors';
 
 const Tab = createBottomTabNavigator();
