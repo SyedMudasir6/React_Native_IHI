@@ -9,8 +9,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <MainNavigation />
+        <BottomTab />
       </NavigationContainer>
+      {/* <BottomTab /> */}
     </View>
   )
 }
