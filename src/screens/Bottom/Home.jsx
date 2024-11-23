@@ -10,20 +10,35 @@ export default function Home(props) {
     const [email, SetEmail] = useState()
     const [phone, SetPhone] = useState()
     const [passWord, SetPassword] = useState()
+    const [SubmitData, setSubmitDta] = useState(false)
 
-    console.log("Name",name)
-    console.log("Email",email)
-    console.log("Password",passWord)
-    console.log("Phone",phone)
+    console.log("Name", name)
+    console.log("Email", email)
+    console.log("Password", passWord)
+    console.log("Phone", phone)
+
+    const submit = () => {
+        setSubmitDta(true)
+    }
 
     return (
         <View style={styles.container}>
-            <Header title={'App'} menu onPress={() => props.navigation.toggleDrawer()}/>  <View style={{marginHorizontal: 10, marginTop: 10, flex: 1}}>
-            <TextInput value={name} onChangeText={SetName} placeholder='Enter Your Name' style={styles.txtInput} />
-            <TextInput value={email} onChangeText={text => SetEmail(text)} placeholder='Enter Your email' style={styles.txtInput} />
-            <TextInput keyboardType='phone-pad' value={phone} onChangeText={SetPhone} placeholder='Enter Your phone' style={styles.txtInput} />
-            <TextInput secureTextEntry value={passWord} onChangeText={SetPassword} placeholder='Enter Your password' style={styles.txtInput} />
-            <CustomButton title={'Submit'}/>
+            {/* <Header title={'App'} menu onPress={() => props.navigation.toggleDrawer()}/>   */}
+            <View style={{ marginHorizontal: 10, marginTop: 10, flex: 1 }}>
+                <TextInput value={name} onChangeText={SetName} placeholder='Enter Your Name' style={styles.txtInput} />
+                <TextInput value={email} onChangeText={text => SetEmail(text)} placeholder='Enter Your email' style={styles.txtInput} />
+                <TextInput keyboardType='phone-pad' value={phone} onChangeText={SetPhone} placeholder='Enter Your phone' style={styles.txtInput} />
+                <TextInput secureTextEntry value={passWord} onChangeText={SetPassword} placeholder='Enter Your password' style={styles.txtInput} />
+                <CustomButton onPress={submit} title={'Submit'} />
+                {
+                    SubmitData && (
+                        <View>
+                            <Text style={styles.txt}>Name: {name || '-'}</Text>
+                            <Text style={styles.txt}>email: {email || '-'}</Text>
+                            <Text style={styles.txt}>phone: {phone || '-'}</Text>
+                        </View>
+                    )
+                }
             </View>
         </View>
     )
