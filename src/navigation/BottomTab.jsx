@@ -7,6 +7,7 @@ import Shop from '../screens/Bottom/Shop';
 import Wishlist from '../screens/Bottom/Wishlist';
 import Account from '../screens/Bottom/Account';
 import Icon, { Icons } from '../components/Icons';
+import colors from '../constant/colors';
 
 
 const Tab = createBottomTabNavigator();
@@ -15,6 +16,10 @@ export default function BottomTab() {
     return (
         <Tab.Navigator screenOptions={{
             headerShown: false,
+            tabBarStyle : {
+                height: '10%',
+                backgroundColor: colors.BLACK,
+            }
         }}>
             <Tab.Screen
                 options={{
