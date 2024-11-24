@@ -1,3 +1,31 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { SCREENS } from '../constant/screen';
+import BottomTab from './BottomTab';
+import Home from '../screens/Bottom/Home';
+import DrawerScreen from './DrawerScreen';
+
+
+const Drawer = createDrawerNavigator();
+
+export default function DrawerNavigation() {
+  return (
+  <Drawer.Navigator  screenOptions={{
+    headerShown: false,
+    drawerType: 'slide',
+  }}
+  drawerContent={props => <DrawerScreen {...props} />}
+  >
+    <Drawer.Screen name={SCREENS.BOTTOM_TAB} component={BottomTab}/>
+  </Drawer.Navigator>
+  )
+}
+
+const styles = StyleSheet.create({})
+
+
+
 // import { StyleSheet, Text, View } from 'react-native'
 // import React from 'react'
 // import Icon from 'react-native-vector-icons/Ionicons';
@@ -12,10 +40,10 @@
 // export default function DrawerNavigator(props) {
 //   return (
 //     <Drawer.Navigator
-//       screenOptions={{
-//         headerShown: false,
-//         drawerType: 'slide',
-//       }}
+    //   screenOptions={{
+    //     headerShown: false,
+    //     drawerType: 'slide',
+    //   }}
 //     // drawerContent={props => <DrawerScreen {...props} />}
 //     >
 //       <Drawer.Screen

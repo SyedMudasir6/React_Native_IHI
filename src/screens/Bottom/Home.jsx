@@ -23,7 +23,7 @@ export default function Home(props) {
 
     return (
         <View style={styles.container}>
-            {/* <Header title={'App'} menu onPress={() => props.navigation.toggleDrawer()}/>   */}
+            <Header title={'App'} menu onPress={() => props.navigation.toggleDrawer()} />  
             <View style={{ marginHorizontal: 10, marginTop: 10, flex: 1 }}>
                 <TextInput value={name} onChangeText={SetName} placeholder='Enter Your Name' style={styles.txtInput} />
                 <TextInput value={email} onChangeText={text => SetEmail(text)} placeholder='Enter Your email' style={styles.txtInput} />
