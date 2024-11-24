@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         width: '100%',
-        height: '6%'
+        height: '6%',
+        marginBottom:"5%"
     },
     txt_btn: {
         color: 'white',

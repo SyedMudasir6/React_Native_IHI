@@ -1,9 +1,10 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View , ScrollView} from 'react-native'
 import React, { useState } from 'react'
 import colors from '../../constant/colors'
 import CustomInput from '../../components/CustomTextInput'
 import CustomButton from '../../components/CustomButton'
 import Header from '../../components/Header'
+import { SCREENS } from '../../constant/screen'
 
 export default function Home(props) {
     const [name, SetName] = useState()
@@ -21,15 +22,21 @@ export default function Home(props) {
         setSubmitDta(true)
     }
 
+    const navigateToAccount = () => {
+       props.navigation.navigate(SCREENS.BOTTOM_SCREEN.Account)
+    }
+
     return (
         <View style={styles.container}>
             <Header title={'App'} menu onPress={() => props.navigation.toggleDrawer()} />  
             <View style={{ marginHorizontal: 10, marginTop: 10, flex: 1 }}>
+                {/* <ScrollView  showsVerticalScrollIndicator={false}> */}
                 <TextInput value={name} onChangeText={SetName} placeholder='Enter Your Name' style={styles.txtInput} />
                 <TextInput value={email} onChangeText={text => SetEmail(text)} placeholder='Enter Your email' style={styles.txtInput} />
                 <TextInput keyboardType='phone-pad' value={phone} onChangeText={SetPhone} placeholder='Enter Your phone' style={styles.txtInput} />
                 <TextInput secureTextEntry value={passWord} onChangeText={SetPassword} placeholder='Enter Your password' style={styles.txtInput} />
                 <CustomButton onPress={submit} title={'Submit'} />
+                <CustomButton onPress={navigateToAccount} title={'Navigte to account'} />
                 {
                     SubmitData && (
                         <View>
@@ -39,7 +46,9 @@ export default function Home(props) {
                         </View>
                     )
                 }
+                {/* </ScrollView> */}
             </View>
+      
         </View>
     )
 }
@@ -51,7 +60,6 @@ const styles = StyleSheet.create({
         // alignItems: 'center',
         // color: colors.SKY,
         // marginHorizontal: 10,
-        // marginTop: 10
     },
     txt: {
         fontSize: 30,

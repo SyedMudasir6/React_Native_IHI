@@ -1,12 +1,81 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { memo } from 'react';
+import { Animated, Modal, View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { responsiveFontSize as rf, widthPercentageToDP as wp, heightPercentageToDP as hp } from '../common/responsive_functions';
+import colors from '../constant/colors';
+import { SCREENS } from '../constant/screen';
+import CustomButton from '../components/CustomButton';
+import { useNavigation } from '@react-navigation/native';
+// import NavigationHandler from './navigation_handler';
+// import fontfamily from '../constant/fontfamily';
 
-export default function DrawerScreen() {
+export default function DrawerScreen(props) {
   return (
-    <View>
-      <Text>DrawerScreen</Text>
-    </View>
-  )
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+    >
+      <DrawerItems
+        onPress={() => props.navigation.navigate(SCREENS.DRAWER_SCREEN.Home)}
+        name={'Home'}
+      />
+      <DrawerItems
+        onPress={() => props.navigation.navigate(SCREENS.DRAWER_SCREEN.Shop)}
+        name={'Shop'}
+      />
+      <DrawerItems
+        onPress={() => props.navigation.navigate(SCREENS.DRAWER_SCREEN.Wishlist)}
+        name={'Wishlist'}
+      />
+      <DrawerItems
+        onPress={() => props.navigation.navigate(SCREENS.DRAWER_SCREEN.Account)}
+        name={'Account'}
+      />
+     
+    </ScrollView>
+  );
 }
 
-const styles = StyleSheet.create({})
+
+const DrawerItems = memo(({ onPress, name, Icon }) => {
+  return (
+    <TouchableOpacity
+      activeOpacity={0.5}
+      style={styles.drawerItem}
+      onPress={onPress}
+    >
+      <View style={styles.itemContainer}>
+        {/* {Icon()} */}
+        <Text style={styles.itemText}>{name}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+});
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.DRAWER_BACK,
+  },
+  contentContainer: {
+    paddingHorizontal: wp(5),
+    paddingBottom: hp(5),
+  },
+  logoContainer: {
+    alignSelf: 'center',
+    marginBottom: hp(5),
+    marginTop: hp(1)
+  },
+  drawerItem: {
+    marginTop: hp('3%'),
+  },
+  itemContainer: {
+    alignSelf: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  itemText: {
+    color: colors.WHITE,
+    marginStart: wp('2%'),
+    // fontFamily: fontfamily.Medium
+  },
+});

@@ -7,13 +7,15 @@ import Shop from '../screens/Bottom/Shop'
 import Wishlist from '../screens/Bottom/Wishlist'
 import Account from '../screens/Bottom/Account'
 import DrawerNavigation from './Drawer'
+import SplashScreen from '../components/SplashScreen'
 
 const Stack = createStackNavigator()
 
 
 export default function MainNavigation() {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName={SCREENS.SplashScreen} screenOptions={{ headerShown: false }}>
+            <Stack.Screen name={SCREENS.SplashScreen} component={SplashScreen} />
             <Stack.Screen name={SCREENS.DRAWER_NAVIGATION} component={DrawerNavigation} />
             <Stack.Screen name={SCREENS.BOTTOM_SCREEN.Home} component={Home} />
             <Stack.Screen name={SCREENS.BOTTOM_SCREEN.Shop} component={Shop} />
