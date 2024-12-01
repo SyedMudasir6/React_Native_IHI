@@ -63,7 +63,11 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: 'white',
     textAlign: 'center',
+<<<<<<< HEAD
     // marginLeft: '35%', 
+=======
+    marginLeft: '35%',
+>>>>>>> 0eebd60c688afb57d10f21d2dfcbf0bbf2a45458
     fontFamily: fontfamily.Bold,
   },
   producttitle:{
