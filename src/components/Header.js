@@ -12,7 +12,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import fontfamily from '../constant/fontfamily';
 
-export default function Header({menu, onPress, title, back}) {
+export default function Header({menu, onPress, title, back,productName}) {
   const navigation = useNavigation();
 
   return (
@@ -41,6 +41,7 @@ export default function Header({menu, onPress, title, back}) {
           </TouchableOpacity>
         )}
         <Text style={styles.title}>{title}</Text>
+        <Text style={styles.producttitle}>{productName}</Text>
       </View>
     </View>
   );
@@ -62,7 +63,16 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: 'white',
     textAlign: 'center',
+<<<<<<< HEAD
+    // marginLeft: '35%', 
+=======
     marginLeft: '35%',
+>>>>>>> 0eebd60c688afb57d10f21d2dfcbf0bbf2a45458
     fontFamily: fontfamily.Bold,
   },
+  producttitle:{
+    fontFamily: fontfamily.Regular,
+    fontSize: 13,
+    color:colors.GREAT_WHITE
+  }
 });

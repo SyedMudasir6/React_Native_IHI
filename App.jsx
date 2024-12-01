@@ -7,11 +7,12 @@ import colors from './src/constant/colors'
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={'default'} backgroundColor={colors.PRIMARY}/>
       <NavigationContainer>
         <MainNavigation/>
       </NavigationContainer>
-    </View>
+    </SafeAreaView>
   )
 }
 

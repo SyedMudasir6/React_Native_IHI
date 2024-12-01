@@ -14,10 +14,10 @@ export default function DrawerScreen(props) {
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
     >
-      <DrawerItems
+      {/* <DrawerItems
         onPress={() => props.navigation.navigate(SCREENS.DRAWER_SCREEN.Home)}
         name={'Home'}
-      />
+      /> */}
       <DrawerItems
         onPress={() => props.navigation.navigate(SCREENS.DRAWER_SCREEN.Shop)}
         name={'Shop'}

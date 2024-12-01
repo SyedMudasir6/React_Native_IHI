@@ -8,6 +8,7 @@ import Wishlist from '../screens/Bottom/Wishlist'
 import Account from '../screens/Bottom/Account'
 import DrawerNavigation from './Drawer'
 import SplashScreen from '../components/SplashScreen'
+import ProductDetails from '../components/ProductDetails'
 
 const Stack = createStackNavigator()
 
@@ -21,6 +22,7 @@ export default function MainNavigation() {
             <Stack.Screen name={SCREENS.BOTTOM_SCREEN.Shop} component={Shop} />
             <Stack.Screen name={SCREENS.BOTTOM_SCREEN.Wishlist} component={Wishlist} />
             <Stack.Screen name={SCREENS.BOTTOM_SCREEN.Account} component={Account} />
+            <Stack.Screen name={SCREENS.BOTTOM_SCREEN.ProductDetails} component={ProductDetails} />
         </Stack.Navigator>
     )
 }
