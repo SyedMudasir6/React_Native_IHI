@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import fontfamily from '../constant/fontfamily'
 
 export default function CustomButton({ style, title, onPress, lableStyle }) {
     return (
@@ -22,5 +23,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18,
         textAlign: 'center',
+        fontFamily: fontfamily.Medium,
     }
 })

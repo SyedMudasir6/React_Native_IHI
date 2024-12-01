@@ -10,6 +10,7 @@ import {
   widthPercentageToDP as wp,
 } from '../common/responsive_functions';
 import { useNavigation } from '@react-navigation/native';
+import fontfamily from '../constant/fontfamily';
 
 export default function Header({menu, onPress, title, back}) {
   const navigation = useNavigation();
@@ -22,7 +23,7 @@ export default function Header({menu, onPress, title, back}) {
             onPress={onPress}
             activeOpacity={onPress ? 0.8 : 1}
             style={styles.row}>
-            <Entypo name="menu" size={40} color="black" />
+            <Entypo name="menu" size={40} color="white" />
           </TouchableOpacity>
         )}
         {back && (
@@ -58,9 +59,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: 18,
-    color: 'black',
+    fontSize: 22,
+    color: 'white',
     textAlign: 'center',
-    marginLeft: 130,
+    marginLeft: '35%',
+    fontFamily: fontfamily.Bold,
   },
 });
