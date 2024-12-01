@@ -7,6 +7,7 @@ export const SCREENS = {
     Shop: 'Shop',
     Wishlist: 'Wishlist',
     Account: 'Account',
+    ProductDetails: 'ProductDetails',
   },
   DRAWER_SCREEN: {
     Home: 'Home',
